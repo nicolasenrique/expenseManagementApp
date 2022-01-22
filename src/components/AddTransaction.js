@@ -12,7 +12,7 @@ export const AddTransaction = () =>{
         e.preventDefault()
 
         const newTransaction = {
-            id: Math.floor(Math.random() * 100000000),
+            id: Math.floor(Math.random() * 100000000), //rounding the number
             text,
             amount: +amount //turns it to a number not a string
         }

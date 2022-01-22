@@ -14,7 +14,7 @@ export const GlobalContext = createContext(initialState);
 
 // This wrap (provides) other components as children.
 export const GlobalProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(AppReducer, initialState);
+    const [state, dispatch] = useReducer(AppReducer, initialState); //useReducer takes 2 values (reducer & initialState)
 
     //Here's where I can add actions (delete, create, edit, etc.)
     function deleteTransaction(id){
