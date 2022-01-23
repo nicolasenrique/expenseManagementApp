@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #c5d2e0;
+  background-color: #DAE0F2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,4 +17,30 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Work Sans', sans-serif;
+}
+
+.inc-exp-container{
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 1px 1px 1px 1px #888888;
+  border-radius: 2px;
+}
+
+.money-plus{
+  color: green;
+}
+.money-minus{
+  color: red;
+}
+
+.btn{
+  width:100%;
+}
+input{
+  width:100%;
+}
+.form-control label{
+  font-weight:bold;
 }
