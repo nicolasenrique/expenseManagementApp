@@ -1,9 +1,16 @@
 export default (state,action) =>{
     switch(action.type){
+        case 'GET_TRANSACTIONS':
+            return{
+                ...state,
+                loading: false,
+                transactions: action.payload
+            }
+
         case 'DELETE_TRANSACTION':
             return {
                 ...state,
-                transactions: state.transactions.filter(transaction => transaction.id !== action.payload)// We're filtering anything that has that id
+                transactions: state.transactions.filter(transaction => transaction._id !== action.payload)// We're filtering anything that has that id
             }
             case "EDIT_TRANSACTION":
                 const updatedTransaction= action.payload;
@@ -22,10 +29,16 @@ export default (state,action) =>{
         case 'ADD_TRANSACTION':
             return {
                 ...state, //this returns the initial state (spread operator)
-                transactions:[action.payload, ...state.transactions]
+                transactions:[...state.transactions, action.payload]
             }    
         default:
             return state;
+        
+        case 'TRANSACTION_ERROR':
+             return{
+               ...state,
+               error: action.payload
+             }
     }
 }
 
