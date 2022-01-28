@@ -6,7 +6,6 @@ export default (state,action) =>{
                 loading: false,
                 transactions: action.payload
             }
-
         case 'DELETE_TRANSACTION':
             return {
                 ...state,
@@ -16,7 +15,7 @@ export default (state,action) =>{
                 const updatedTransaction= action.payload;
           
                 const updatedTransactions = state.transactions.map((transaction) => {
-                  if (transaction.id === updatedTransaction.id) {
+                  if (transaction._id === updatedTransaction._id) {
                     return updatedTransaction;
                   }
                   return transaction;
@@ -26,7 +25,7 @@ export default (state,action) =>{
                     transactions: updatedTransactions,
                   };
                     
-        case 'ADD_TRANSACTION':
+            case 'ADD_TRANSACTION':
             return {
                 ...state, //this returns the initial state (spread operator)
                 transactions:[...state.transactions, action.payload]
